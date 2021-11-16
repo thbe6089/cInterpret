@@ -1,0 +1,3 @@
+ * Database system
+   - Formatted as CSV binary search tree, where parent is line n, left child is
+     line 2n+1, and right child is line 2n+2
