@@ -1,5 +1,5 @@
-#ifndef _LOOP_H
-#define _LOOP_H
+#ifndef LOOP_H_
+#define LOOP_H_
 
 /**
  * @brief Main program loop

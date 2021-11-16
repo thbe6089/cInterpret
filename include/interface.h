@@ -1,7 +1,7 @@
-#ifndef _INTERFACE_H
-#define _INTERFACE_H
+#ifndef INTERFACE_H_
+#define INTERFACE_H_
 
-#define _VERSION "0.0"
+#define _VERSION_ "0.0"
 
 /**
  * @brief Display the help message

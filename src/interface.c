@@ -25,7 +25,7 @@ int cmd_line_args(int argc, char **argv, FILE **out_file) {
 				if(streq(argv[i], "--help")) {
 					return 1;
 				} else if(streq(argv[i], "--version")) {
-					printf("cInterpreter v%s\n", _VERSION);
+					printf("cInterpreter v%s\n", _VERSION_);
 					return 0;
 				} else {
 					return 1;
