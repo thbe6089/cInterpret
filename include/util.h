@@ -1,5 +1,5 @@
-#ifndef HELPER_H_
-#define HELPER_H_
+#ifndef UTIL_H_
+#define UTIL_H_
 
 /**
  * @brief Basic, efficient function to check if two strings are equal
