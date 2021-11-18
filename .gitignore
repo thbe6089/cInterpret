@@ -1,6 +1,6 @@
-./bin
-./build
-./dev
-./html
-./latex
-./.vscode
+bin
+build
+dev
+html
+latex
+.vscode
