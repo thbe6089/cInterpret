@@ -1,9 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 #include "interface.h"
-
-#include "helper.h"
 
 void disp_help_msg() {
 	fprintf(stderr, "usage: cinterpreter [options] [< in_file] [> out_file]\n\n");
@@ -22,10 +21,10 @@ int cmd_line_args(int argc, char **argv, FILE **out_file) {
 		if(argv[i][0] == '-') {
 			switch(argv[i][1]) {
 			case '-':
-				if(streq(argv[i], "--help")) {
+				if(strcmp(argv[i], "--help") == 0) {
 					return 1;
-				} else if(streq(argv[i], "--version")) {
-					printf("cInterpreter v%s\n", _VERSION_);
+				} else if(strcmp(argv[i], "--version") == 0) {
+					printf("cInterpreter v%s\n", VERSION_);
 					return 0;
 				} else {
 					return 1;
@@ -35,7 +34,7 @@ int cmd_line_args(int argc, char **argv, FILE **out_file) {
 				return 1;
 			
 			case 'v':
-				printf("cInterpreter v%s\n", _VERSION);
+				printf("cInterpreter v%s\n", VERSION_);
 				return 0;
 			
 			case 'f':
