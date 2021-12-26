@@ -11,15 +11,20 @@
 
 #include <stddef.h>
 
-enum p_speech { interjection, pronoun, noun, verb, adjective, adverb, preposition, conjunction };
-enum conjugation { fps, sps, tps, fpp, spp, tpp };
+typedef enum part_of_speech_ { 
+	interjection, pronoun, noun, verb, adjective, adverb, preposition, conjunction 
+} p_speech;
 
-struct token {
-	char str[25] = ""; // Arbitrary length that should store most words
-	short is_too_long = 0; // Flag for if the string length was too long
+typedef enum conjugation_ {
+	fps, sps, tps, fpp, spp, tpp
+} conjugation;
+
+typedef struct token_ {
+	char str[16]; // Arbitrary length that should store most words
+	short is_too_long; // Flag for if the string length was too long
 	p_speech part;
 	conjugation subject;
-};
+} token;
 
 typedef struct s_buffer_ s_buffer;
 
@@ -30,5 +35,6 @@ void resize_buffer(s_buffer *buffer, size_t size);
 int token_at(s_buffer *buffer, size_t pos, token *word);
 void push_back(s_buffer *buffer, token word);
 
+size_t get_buffer_size(s_buffer *buffer);
 
 #endif

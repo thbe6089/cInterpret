@@ -6,15 +6,17 @@
  * @see sentence_buffer.h
  */
 
+#include <stdlib.h>
+
 #include "sentence_buffer.h"
 
 /**
  * Struct to store the array
  */
 struct s_buffer_ {
-	token *data = NULL;
-	size_t size = 0;
-	size_t curr = 0; // Store current size
+	token *data;
+	size_t size;
+	size_t curr; // Store current size
 };
 
 /**
@@ -27,6 +29,7 @@ s_buffer *new_buffer(size_t size) {
 	s_buffer *out = (s_buffer*) malloc(sizeof(s_buffer));
 
 	out->size = size;
+	out->curr = 0;
 	out->data = (token*) malloc(sizeof(token) * size);
 
 	return out;
@@ -50,7 +53,7 @@ void delete_buffer(s_buffer *buffer) {
  * @param size New size (double recommended)
  */
 void resize_buffer(s_buffer *buffer, size_t size) {
-	buffer = (token*) realloc(buffer, sizeof(token) * size);
+	buffer->data = (token*) realloc(buffer->data, sizeof(token) * size);
 }
 
 /**
@@ -62,7 +65,7 @@ void resize_buffer(s_buffer *buffer, size_t size) {
  * @return -1 if invalid input, 0 otherwise
  */
 int token_at(s_buffer *buffer, size_t pos, token *word) {
-	if(pos >= buffer->curr || pos <= 0) return -1;
+	if(pos >= buffer->curr) return -1;
 
 	*word = buffer->data[pos];
 	return 0;
@@ -85,3 +88,8 @@ void push_back(s_buffer *buffer, token word) {
 
 	buffer->data[buffer->curr-1] = word;
 }
+
+/**
+ * Returns size of buffer specified
+ */
+size_t get_buffer_size(s_buffer *buffer) { return buffer->size; }
