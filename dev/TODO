@@ -1,0 +1,24 @@
+TODO:
+
+* Sentence Buffer (dynamic array to store information about each word)
+* Dictionary (binary database to store base vocabulary, optimized for quick search)
+* Real Memory (binary database to store real-life information, optimized for speed)
+
+* Lexer (cleans and tokenizes input)
+* Parser (expands tokens to base vocabulary)
+  -> Order of evaluation:
+     1. Phrases
+     2. Morphology
+     3. Syntax
+     4. Semantics
+* Comprehension (takes actions, following tense, and updates Real Memory)
+
+* Query Response (recognizes questions and forms responses)
+
+* Learning Response (adds new words, prompts user for additional information, etc.)
+
+
+Useful Links:
+
+https://tomasetti.me/guide-parsing-algorithms-terminology/
+https://computer.howstuffworks.com/c39.htm
