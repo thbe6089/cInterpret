@@ -10,10 +10,13 @@
 #ifndef DICTIONARY_H_
 #define DICTIONARY_H_
 
-#include <stdio.h>
+#define NUM_BUCKETS 50000
 
 #include "util.h"
 
+typedef struct dictionary_ dictionary;
 
+dictionary *open_dict(char *filename);
+void close_dict(dictionary *dict);
 
 #endif

@@ -9,9 +9,12 @@ TODO:
   -> Order of evaluation:
      1. Phrases
      2. Morphology
-     3. Syntax
-     4. Semantics
+     3. Proper Nouns
+     4. Syntax
+     5. Semantics
 * Comprehension (takes actions, following tense, and updates Real Memory)
+
+* Configuration (change number of buckets, change type of response, etc.)
 
 * Query Response (recognizes questions and forms responses)
 
